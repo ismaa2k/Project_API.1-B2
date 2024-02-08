@@ -1,5 +1,8 @@
 import express, { Request, Response } from "express";
 import { CurrencyController } from "./CurrencyController";
+import swaggerJSDoc from "swagger-jsdoc";
+import swaggerUi from "swagger-ui-express";
+import { swaggerOptions } from "./swaggerOptions";
 
 const app = express();
 const API_KEY = "fca_live_XiPouDv94apg596878Z7sNCm6ra37s9NcNOf9gD1";
@@ -25,6 +28,9 @@ app.get(
     await currencyController.getHistorical(req, res);
   }
 );
+
+const specs = swaggerJSDoc(swaggerOptions);
+app.use("/api-docs", swaggerUi.serve, swaggerUi.setup(specs));
 
 app.listen(PORT, () => {
   console.log(`Le serveur est en cours d'exe sur le port ${PORT}`);

@@ -1,6 +1,75 @@
 import { Request, Response } from "express";
 import axios, { AxiosResponse } from "axios";
 
+/**
+ * @swagger
+ * /latest/{currency}:
+ *  get:
+ *    summary: Conversion EUR > Monnaie Donnée.
+ *    description: Récupère la conversion d'une monnaie donnée avec comme base l'EURO.
+ *    tags: [Conversion Simple]
+ *    parameters:
+ *      - in: path
+ *        name: currency
+ *        required: true
+ *        description: Code de la monnaie pour la conversion (USD, RUB, TND...)
+ *        schema:
+ *          type: string
+ *    responses:
+ *      200:
+ *        description: SUCCÈS !
+ *      400:
+ *        description: ERREUR !
+ */
+
+/**
+ * @swagger
+ * /info/{currency}:
+ *  get:
+ *    summary: Obtention des informations d'une monnaie.
+ *    description: Récupère toutes les infos d'une monnaie donnée.
+ *    tags: [Info Monnaie]
+ *    parameters:
+ *      - in: path
+ *        name: currency
+ *        required: true
+ *        description: Code de la monnaie pour obtenir les informations (USD, RUB, TND...)
+ *        schema:
+ *          type: string
+ *    responses:
+ *      200:
+ *        description: SUCCÈS !
+ *      400:
+ *        description: ERREUR !
+ */
+
+/**
+ * @swagger
+ * /historical/{currency}/{date}:
+ *  get:
+ *    summary: Conversion EUR > Monnaie Donnée + Date donnée
+ *    description: Récupère la conversion d'une monnaie à une date précisée avec comme base l'EURO.
+ *    tags: [Conversion Datée]
+ *    parameters:
+ *      - in: path
+ *        name: currency
+ *        required: true
+ *        description: Code de la monnaie pour la conversion (USD, RUB, TND...)
+ *        schema:
+ *          type: string
+ *      - in: path
+ *        name: date
+ *        required: true
+ *        description: Date à entrer (année-mois-jour)
+ *        schema:
+ *          type: string
+ *    responses:
+ *      200:
+ *        description: SUCCÈS !
+ *      400:
+ *        description: ERREUR !
+ */
+
 export class CurrencyController {
   private API_KEY: string;
 
