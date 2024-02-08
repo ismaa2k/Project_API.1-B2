@@ -1,4 +1,5 @@
 # ApiCurrency : API de conversion de devises
+Par Ismaël GENET & Mohamed Karim FEKI.
 ## Description du projet.
 
 ApiCurrency est une API facile à utiliser qui fournit des informations de conversion de devises en temps réel. Il utilise des technologies comme Axios, Node.js (Express) et TypeScript.
