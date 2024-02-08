@@ -12,7 +12,7 @@ export class CurrencyController {
     const currencies: string = req.params.currencies;
     try {
       const response: AxiosResponse = await axios.get(
-        `https://api.currencyapi.com/v3/latest?apikey=${this.API_KEY}&currencies=${currencies}`
+        `https://api.currencyapi.com/v3/latest?apikey=${this.API_KEY}&base_currency=EUR&currencies=${currencies}`
       );
       const data = response.data;
       res.json(data);
@@ -25,7 +25,7 @@ export class CurrencyController {
     const currencies: string = req.params.currencies;
     try {
       const response: AxiosResponse = await axios.get(
-        `https://api.currencyapi.com/v3/currencies?apikey=${this.API_KEY}&currencies=${currencies}`
+        `https://api.currencyapi.com/v3/currencies?apikey=${this.API_KEY}&base_currency=EUR&currencies=${currencies}`
       );
       const data = response.data;
       res.json(data);
@@ -39,7 +39,7 @@ export class CurrencyController {
     const date: string = req.params.date;
     try {
       const response: AxiosResponse = await axios.get(
-        `https://api.currencyapi.com/v3/historical?apikey=${this.API_KEY}&currencies=${currencies}&date=${date}`
+        `https://api.currencyapi.com/v3/historical?apikey=${this.API_KEY}&base_currency=EUR&currencies=${currencies}&date=${date}`
       );
       const data = response.data;
       res.json(data);
