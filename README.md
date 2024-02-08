@@ -5,7 +5,7 @@ ApiWeather est un projet simplifié qui utilise Express et Axios pour interroger
 
 ## Technologies Utilisées
 - Express pour créer le serveur HTTP
-- Axios pour faire des requêtes HTTP à l'API météorologique
+- Axios pour faire des requêtes HTTP à l'API météorologiqueS
 - TypeScript pour ajouter une typage statique au code JavaScript
 - ts-Node pour exécuter des scripts TypeScript directement sans compilation préalable
 
